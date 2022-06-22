@@ -11,4 +11,4 @@ def create_wallet():
     # Create Bitcoin Address from Public Key
     address = pubtoaddr(public_key)
 
-    return [private_key, public_key, address]
+    return [private_key, address]
