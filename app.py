@@ -10,7 +10,7 @@ app = Flask(__name__)
 api = Api(app)
 
 app.secret_key = "Secret key"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:root@localhost:3031/walletservice'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:root@wallet-db:3031/walletservice'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -48,7 +48,7 @@ class CreateWallet(Resource):
         return json_to_return
 
 
-api.add_resource(CreateWallet, '/createwallet/<string:blockchain>')
+api.add_resource(CreateWallet, '/api/wallet/createwallet/<string:blockchain>')
 
 if __name__ == '__main__':
-    app.run(port=3030, debug=True)
+    app.run(host='0.0.0.0', port=3030, debug=True)
