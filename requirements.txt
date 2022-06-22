@@ -1,0 +1,7 @@
+Flask
+Flask-RESTful
+flask-sqlalchemy
+mysqlclient
+web3
+bitcoin
+gunicorn
